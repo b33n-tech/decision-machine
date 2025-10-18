@@ -1,61 +1,30 @@
 import streamlit as st
 
-# Titre de l'application
+# Titre
 st.title("Machine Décisionnelle - Sélecteur de Prompt")
 
 # Description
-st.markdown("""
-Choisis le type de prompt que tu souhaites afficher.  
-L'application te montrera uniquement le prompt sélectionné, prêt à être copié-collé.
-""")
+st.write("Sélectionne un prompt dans le menu déroulant pour l'afficher.")
 
-# Tableau récapitulatif des types de prompt
-prompt_info = {
-    "V1 - Standard 🔵": {
-        "Niveau": "Standard",
-        "Cible": "Projets normaux, débutants",
-        "Philosophie": "Tout expliciter, même l’évident"
-    },
-    "V2 - Avancé 🟡": {
-        "Niveau": "Avancé",
-        "Cible": "Environnements erratiques",
-        "Philosophie": "Anticiper l’imprévisible"
-    },
-    "V3 - Extrême 🔴": {
-        "Niveau": "Extrême",
-        "Cible": "Milieux toxiques/bloquants",
-        "Philosophie": "Radical High Agency"
-    }
-}
-
-# Affichage du tableau récap
-st.subheader("Types de Prompt")
-for key, value in prompt_info.items():
-    st.write(f"**{key}**")
-    st.write(f"- Niveau : {value['Niveau']}")
-    st.write(f"- Cible : {value['Cible']}")
-    st.write(f"- Philosophie : {value['Philosophie']}")
-    st.write("---")
-
-# Sélecteur de prompt
+# Menu déroulant pour choisir le prompt
 prompt_choice = st.selectbox(
-    "Sélectionne le prompt à afficher :",
+    "Choisis le type de prompt :",
     ["V1 - Standard 🔵", "V2 - Avancé 🟡", "V3 - Extrême 🔴"]
 )
 
-# Contenu des prompts (textes bruts)
+# Contenu des prompts (texte intégral à coller ici)
 prompts = {
     "V1 - Standard 🔵": """# Script GPT - Workflow opérationnel “micro micro-actions” extrême
-Tu es un assistant expert en organisation de projets et en exécution opérationnelle...
-(ici coller tout le texte intégral du Prompt V1)
+Tu es un assistant expert en organisation de projets et en exécution opérationnelle. Ton rôle est de transformer **des notes brutes** en un **workflow ultra détaillé**, comprenant toutes les **micro-actions invisibles**, **micro-micro-actions**, **micro-micro-micro actions**, **micro-micro-micro-micro actions**, **Principe :**. chaque action est découpée en 3 à 5 micro-sous-actions, avec instructions ultra-détaillées, checklist, vérifications et plans B. Chaque étape doit être **une phrase complète et explicative**, incluant : quoi, qui, comment, pourquoi, conditions, dépendances et plans B. - Même les actions que quelqu’un pourrait juger “trop évidentes” doivent être écrites. - L’objectif est que **le flux opérationnel soit 100% externalisé** : aucune réflexion nécessaire, aucune étape oubliée, aucune zone grise. - Inclure **plans alternatifs / contournements** pour chaque risque ou blocage potentiel.
+... (coller le reste du Prompt V1 ici) ...
 """,
     "V2 - Avancé 🟡": """# Prompt for effective decision making (V2)
-Transformer mes notes ou texte brut en un workflow opérationnel ultra détaillé...
-(ici coller tout le texte intégral du Prompt V2)
+Transformer mes notes ou texte brut en un workflow opérationnel **ultra détaillé micro‑micro‑micro-actions**, prêt à exécuter, adapté à un environnement *extrêmement erratique et dispersé* : toutes les parties prenantes changent souvent d’avis, sont distraites et décident au dernier moment.
+... (coller le reste du Prompt V2 ici) ...
 """,
     "V3 - Extrême 🔴": """# Prompt V3 Hyper High Agency in Worst Erratic Settings
-Transforme mes notes en un workflow opérationnel ultra détaillé...
-(ici coller tout le texte intégral du Prompt V3)
+Transforme mes notes en un workflow opérationnel **ultra détaillé micro‑micro‑micro-actions**, prêt à exécuter, pour un environnement *pire du pire extrême* :
+... (coller le reste du Prompt V3 ici) ...
 """
 }
 
