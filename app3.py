@@ -40,7 +40,15 @@ for i, (key, value) in enumerate(prompts_in_cat.items()):
     col = cols[i % cols_per_row]
     with col:
         st.markdown(f"""
-        <div style="border:1px solid #ddd; padding:15px; margin-bottom:10px; border-radius:10px; cursor:pointer; background-color:#f9f9f9;">
+        <div style="
+            border:1px solid #555; 
+            padding:15px; 
+            margin-bottom:10px; 
+            border-radius:10px; 
+            cursor:pointer; 
+            background-color:#2a2a2a; 
+            color:#eee;
+        ">
         <b>{key}</b><br>
         <small>{value.get("description", "")}</small>
         </div>
